@@ -15,7 +15,10 @@ namespace Application.Services
         {
             _userRepositoryBase = userRepositoryBase;
             _userMapping = userMapping;
+            // variable privada
         }
+        // Sirve para recibir dependencias (inyección de dependencias)
+
 
         public async Task<List<AdminDto?>> GetAllAdminsAsync()
         {
@@ -27,6 +30,10 @@ namespace Application.Services
                 .Select(e => _userMapping.FromEntityToResponse(e))
                 .ToList();
             return responseMapped;
+
+            // Trae todos los usuarios de la DB
+            // Filtra solo admins activos
+            // Convierte a DTO
         }
 
         public async Task<AdminDto?> GetAdminAsync(int idUser)

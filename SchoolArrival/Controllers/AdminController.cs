@@ -3,6 +3,7 @@ using Application.Models.Requests;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using System;
 using System.Security.Claims;
 
 namespace SchoolArrival.Controllers
@@ -23,6 +24,7 @@ namespace SchoolArrival.Controllers
             // async → permite usar await
             // Task<IActionResult> → devuelve una respuesta HTTP
             var response = await _userServices.GetAllAdminsAsync();
+            // El controller NO hace la lógica la delega al AdminService.cs en App
             return Ok(response);
         }
 
