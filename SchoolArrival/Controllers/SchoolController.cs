@@ -11,7 +11,9 @@ namespace SchoolArrival.Controllers
     [ApiController]
     public class SchoolController : Controller
     {
-        private readonly ISchoolServices _schoolServices;
+        private readonly ISchoolServices _schoolServices; //1. Propiedad privada y de solo lectura del tipo de la clase que quiero inyectar
+
+        //2. Asignarle en el constructor un parametro del tipo de la clase a inyectar a la propiedad privada anterior 
         public SchoolController(ISchoolServices services)
         {
             _schoolServices = services;
