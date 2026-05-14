@@ -25,7 +25,7 @@ builder.Services.AddSwaggerGen(setupAction =>
     {
         Type = SecuritySchemeType.Http,
         Scheme = "Bearer",
-        Description = "Acá pegar el token generado al loguearse."
+        Description = "AcÃ¡ pegar el token generado al loguearse."
     });
 
     setupAction.AddSecurityRequirement(new OpenApiSecurityRequirement
@@ -59,7 +59,7 @@ builder.Services.AddAuthentication("Bearer")
 builder.Services.AddCors(options =>
 {
     options.AddPolicy("AllowFrontendOrigin",
-        policy => policy.WithOrigins("http://localhost:5173") // Cambia esta URL según la del frontend
+        policy => policy.WithOrigins("http://localhost:5173") // Cambia esta URL segÃºn la del frontend
                          .AllowAnyMethod()
                          .AllowAnyHeader());
 });
@@ -82,9 +82,9 @@ builder.Services.AddScoped<SchoolMapping>();
 builder.Services.AddScoped<PassengerMapping>();
 builder.Services.AddScoped<AdminMapping>();
 builder.Services.AddScoped<DriverMapping>();
-
+//linea para configurar dbset de base de datos. para eso, instalar un orm para que pueda hacer la traducccion de bd y viceversa (un paquete)
 builder.Services.AddDbContext<TravelArrivalDbContext>(options => options.UseSqlite(builder.Configuration["ConnectionStrings:SchoolArrivalDBConnectionString"]));
-
+//en la conection string se pasa el nombre de la base de datos â†‘
 builder.Services.Configure<AuthenticationServiceOptions>(
     builder.Configuration.GetSection(AuthenticationServiceOptions.Authentication));
 
