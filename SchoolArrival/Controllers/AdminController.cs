@@ -21,10 +21,13 @@ namespace SchoolArrival.Controllers
 
         [HttpGet]
         public async Task<IActionResult> GetAllAsync()
+        {
             // async → permite usar await
             // Task<IActionResult> → devuelve una respuesta HTTP
+
             var response = await _userServices.GetAllAdminsAsync();
-            // El controller NO hace la lógica la delega al AdminService.cs en App
+
+            // El controller NO hace la lógica, la delega al AdminService.cs en App
             return Ok(response);
         }
 
@@ -35,7 +38,7 @@ namespace SchoolArrival.Controllers
             if (response == null)
             {
                 return StatusCode(404, "El usuario no fue encontrado.");
-            }    
+            }
             return Ok(response);
         }
 
@@ -79,7 +82,7 @@ namespace SchoolArrival.Controllers
         public async Task<IActionResult> DeleteUser(int idUser)
         {
             var response = await _userServices.GetAdminAsync(idUser);
-            if(response == null)
+            if (response == null)
             {
                 return NotFound("No se encontró el usuario que desea eliminar.");
             }
