@@ -7,8 +7,9 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace SchoolArrival.Infrastructure.Data;
-
-public class EfRepository<T> : RepositoryBase<T> where T : class
+//<T> : tipo generico que prtmite que la clase funcione con cualquier clase sin recibir repositorios separados 
+public class EfRepository<T> : RepositoryBase<T> where T : class //EfRepository es un repo generico que sirve para reutilizar code para cualquier entidad
+//codigo mas legible y ordenado, no repite code: sin heredar todos los repos. tiene todos los metdos, usas solo los que necesites. 
 {
     protected readonly TravelArrivalDbContext _context;
     public EfRepository(TravelArrivalDbContext dbContext) : base(dbContext)
