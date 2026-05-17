@@ -3,6 +3,7 @@ using Domain.Enums;
 using Domain.Models;
 using Microsoft.EntityFrameworkCore;
 
+
 namespace Infraestructure.Data
 {
     public class TravelArrivalDbContext : DbContext
