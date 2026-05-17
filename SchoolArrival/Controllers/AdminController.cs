@@ -22,7 +22,6 @@ namespace SchoolArrival.Controllers
         [HttpGet]
         public async Task<IActionResult> GetAllAsync()
         {
-            // async → permite usar await
             // Task<IActionResult> → devuelve una respuesta HTTP
 
             var response = await _userServices.GetAllAdminsAsync();
