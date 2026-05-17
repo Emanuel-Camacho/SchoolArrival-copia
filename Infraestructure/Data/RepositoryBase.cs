@@ -10,7 +10,7 @@ public abstract class RepositoryBase<T> : IRepositoryBase<T> where T : class
 {
     private readonly DbContext _dbContext;
 
-    public RepositoryBase(DbContext dbContext)
+    public RepositoryBase(DbContext dbContext) //dBcONTEXT ES EL ARCHIVO SCHOOLARRIVAL.DB = BD 
     {
         _dbContext = dbContext;
 
