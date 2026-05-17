@@ -52,9 +52,12 @@ namespace Application.Services
 
         }
 
+        // async marca un metodo como asincronico y puede realizar otras cosas mientras espera 
+        // Task es una tarea que se esta ejecutando y terminara en el futuro
         public async Task<bool> CreateUser(AdminRequest request)
         {
             var entity = _userMapping.FromRequestToEntity(request);
+            // await espera el resutado sin bloquear el programa
             await _userRepositoryBase.AddAsync(entity);
             return true;
         }

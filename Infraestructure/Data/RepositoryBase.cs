@@ -4,7 +4,7 @@ using SchoolArrival.Domain.Interfaces;
 
 namespace SchoolArrival.Infrastructure.Data;
 
-
+// <T> es un tipo generico osea que no se sabe todavia que objeto se va a usar
 public abstract class RepositoryBase<T> : IRepositoryBase<T> where T : class
 {
     private readonly DbContext _dbContext;

@@ -44,9 +44,9 @@ namespace SchoolArrival.Controllers
 
 
         [HttpPost]
-        public async Task<IActionResult> CreateUser(AdminRequest request) //reQUEST ES UN PARAMETRO
+        public async Task<IActionResult> CreateUser(AdminRequest request) //REQUEST ES UN PARAMETRO
         {
-            var response = await _userServices.CreateUser(request); //rEQUEST ES UN PARAMETRO
+            var response = await _userServices.CreateUser(request); //REQUEST ES UN PARAMETRO
             return Ok(response);
         }
 
