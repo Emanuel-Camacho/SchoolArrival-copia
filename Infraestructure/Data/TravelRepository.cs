@@ -6,7 +6,7 @@ using Domain.Enums;
 
 namespace Infraestructure.Data
 {
-    public class TravelRepository : EfRepository<Travel>, ITravelRepository
+    public class TravelRepository : EfRepository<Travel>, ITravelRepository //<TIPO DE DATO>
     {
         public TravelRepository(TravelArrivalDbContext context) : base(context) { }
         
