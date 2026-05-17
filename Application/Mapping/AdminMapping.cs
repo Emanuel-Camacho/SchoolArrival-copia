@@ -11,9 +11,10 @@ using System.Threading.Tasks;
 namespace Application.Mapping
 {
     public class AdminMapping
-    {
-        public User FromRequestToEntity(AdminRequest dto)
-        {
+    
+    {               //recibe objeto y lo convierte y devuelve en usuario
+        public User FromRequestToEntity(AdminRequest dto) 
+        { 
             var user = new User
             {
                 Email = dto.Email,
