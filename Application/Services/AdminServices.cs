@@ -10,7 +10,7 @@ namespace Application.Services
     public class AdminServices : IAdminServices
     {
         private readonly IRepositoryBase<User> _userRepositoryBase;
-        private readonly AdminMapping _userMapping;
+        private readonly AdminMapping _userMapping; //admin nos permite trsnformar un objeto de tipo admin request a un usuario admin
         public AdminServices(IRepositoryBase<User> userRepositoryBase, AdminMapping userMapping)
         {
             _userRepositoryBase = userRepositoryBase;
@@ -56,7 +56,7 @@ namespace Application.Services
         // Task es una tarea que se esta ejecutando y terminara en el futuro
         public async Task<bool> CreateUser(AdminRequest request)
         {
-            var entity = _userMapping.FromRequestToEntity(request);
+            var entity = _userMapping.FromRequestToEntity(request); //entiti es la variable que contiene la response del metodo FromRequestToEntity 
             // await espera el resutado sin bloquear el programa
             await _userRepositoryBase.AddAsync(entity);
             return true;
