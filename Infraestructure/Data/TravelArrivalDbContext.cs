@@ -7,7 +7,7 @@ namespace Infraestructure.Data
 {
     public class TravelArrivalDbContext : DbContext
     {
-        public DbSet<User> Users { get; set; }
+        public DbSet<User> Users { get; set; } //SE ENCARGAN DE CREAR UNA TABLA EN BD CON EL NOMBRE Y TIPO DE DATO QUE VAYA A ALMCENr
         public DbSet<Travel> Travels { get; set; }
         public DbSet<School> Schools { get; set; }
         public TravelArrivalDbContext(DbContextOptions<TravelArrivalDbContext> options) : base(options)
