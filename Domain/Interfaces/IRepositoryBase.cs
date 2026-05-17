@@ -1,5 +1,5 @@
 ﻿namespace SchoolArrival.Domain.Interfaces;
-
+// definimos la interfaz y metodos base de los repositorios
 public interface IRepositoryBase<T> where T : class
 {
     Task<T?> GetByIdAsync<TId>(TId id, CancellationToken cancellationToken = default) where TId : notnull;

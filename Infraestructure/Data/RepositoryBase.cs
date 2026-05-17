@@ -4,6 +4,7 @@ using SchoolArrival.Domain.Interfaces;
 
 namespace SchoolArrival.Infrastructure.Data;
 
+// implementa la logica de los métodos definidos en IRepositoryBase
 // <T> es un tipo generico osea que no se sabe todavia que objeto se va a usar
 public abstract class RepositoryBase<T> : IRepositoryBase<T> where T : class
 {
