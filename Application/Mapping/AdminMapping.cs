@@ -13,10 +13,11 @@ namespace Application.Mapping
     public class AdminMapping
     
     {               //recibe objeto y lo convierte y devuelve en usuario
-        public User FromRequestToEntity(AdminRequest dto) 
-        { 
-            var user = new User
-            {
+        public User FromRequestToEntity(AdminRequest dto) //FromRequestToEntity es un metodo de la clase adminmappin
+        {                                                 //recib eobjeto caragdo a mano por usuario 
+            
+            var user = new User                        //Crea var usuario con tipo de dato usuario: seria la clase usuario con todas su propiedades
+            {                                            //id no esta porque lo autogenera
                 Email = dto.Email,
                 FullName = dto.FullName,
                 Password = dto.Password,

@@ -63,7 +63,7 @@ builder.Services.AddCors(options =>
                          .AllowAnyMethod()
                          .AllowAnyHeader());
 });
-
+//inyeccion de dependencias donde se definen ciclos de vida de las CLASES
 builder.Services.AddScoped<IUserServices, UserServices>();
 builder.Services.AddScoped<ITravelRepository, TravelRepository>();
 builder.Services.AddScoped<IDriverRepository, DriverRepository>();
